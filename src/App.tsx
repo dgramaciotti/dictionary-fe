@@ -66,7 +66,7 @@ function App() {
             },
         ],
         {
-            basename: '/app',
+            basename: '/dictionary-fe',
         }
     )
 
