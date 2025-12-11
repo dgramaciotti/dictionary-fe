@@ -5,7 +5,7 @@ import { visualizer } from 'rollup-plugin-visualizer'
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: '/app',
+    base: '/app/',
     plugins: [
         react({
             babel: {
@@ -22,7 +22,7 @@ export default defineConfig({
                 theme_color: '#ffffff',
                 background_color: '#ffffff',
                 display: 'standalone',
-                start_url: '/app',
+                start_url: '/app/',
             },
             workbox: {
                 cleanupOutdatedCaches: true,
