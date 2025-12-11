@@ -28,10 +28,15 @@ function GameBox() {
             const elements = Array.from(
                 containerRef.current!.querySelectorAll('input')
             )
+            // Get the text, joining each input
             const input = elements.reduce((acc, el) => acc + el.value, '')
-            // Manual reset since the value is not controlled by react
+            // Dont allow partial submit (only if all inputs are filled)
             if (input.length !== selected?.word.length) return
-            elements.forEach((el) => (el.value = ''))
+            // Manual reset since the value is not controlled by react
+            elements.forEach((el) => {
+                el.value = ''
+                el.blur()
+            })
             setTries([...tries, input])
         }
     }

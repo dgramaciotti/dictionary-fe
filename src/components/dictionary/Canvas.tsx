@@ -17,11 +17,12 @@ function Canvas() {
     const [query, setQuery] = useState('')
     const setSelected = useAppState((s) => s.setSelectedWord)
     const selected = useAppState((s) => s.selectedWord)
-    const { data: words } = useQuery({
+    const { data: words, isLoading } = useQuery({
         queryKey: ['words', query],
         queryFn: () => fetchWords({ query, max: 250 }),
     })
 
+    // If nothing is selected, select the first word
     useEffect(() => {
         if (!words || words?.length === 0 || selected) return
         setSelected(words[0])
@@ -66,7 +67,7 @@ function Canvas() {
                 />
             </FormControl>
 
-            <WordList words={words} />
+            {!isLoading && <WordList words={words} />}
         </Grid>
     )
 }
