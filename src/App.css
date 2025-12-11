@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.game-input {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+    .game-input {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Style the scrollbar thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
